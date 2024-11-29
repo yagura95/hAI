@@ -1,0 +1,27 @@
+flowchart TB
+    subgraph "Context Management"
+        CS[Context Store]
+        KG[Knowledge Graph]
+        HP[Historical Patterns]
+    end
+
+    subgraph "Learning System"
+        FA[Feedback Analyzer]
+        PM[Pattern Matcher]
+        CA[Context Augmenter]
+    end
+
+    subgraph "Application Layer"
+        IR[Intent Resolver]
+        TE[Task Executor]
+    end
+
+    U[User] --> IR
+    IR --> CS
+    CS --> KG
+    KG --> HP
+    HP --> PM
+    PM --> FA
+    FA --> CA
+    CA --> CS
+    TE --> FA
